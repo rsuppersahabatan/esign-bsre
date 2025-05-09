@@ -46,7 +46,7 @@ class registrasiUser
     public function __construct(){
         require_once realpath(__DIR__ . '/..') . "/req.php";
         $this->access_token = $access_token;
-        $this->env = $env ?? [];
+        $this->env = $env;
         $this->endPoint = $endPoint;
     }
     public function index()

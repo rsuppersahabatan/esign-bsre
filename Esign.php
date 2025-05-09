@@ -4,10 +4,11 @@ namespace Esign;
 
 // Ensure the file containing the listUser class is included if not autoloaded
 require_once __DIR__ . '/API/listUser.php';
+require_once __DIR__ . '/API/registrasiUser.php'; // Include the file explicitly
 
 use downloadDokumen\downloadDokumen;
 use listUser\listUser;
-use API\registrasiUser; // Adjusted namespace to match the file structure
+use registrasiUser\registrasiUser; // Adjust the namespace to match the actual file structure
 use sendSignRequest\sendSignRequest;
 use signDokumenDownload\signDokumenDownload;
 use signDokumen\signDokumen;
@@ -53,7 +54,6 @@ class Esign
         $error_sk = "";
         $error_imagettd = "";
 
-        require_once "API/registrasiUser.php";
         $registrasiUser = new registrasiUser();
 
         $ktp_name = $_FILES["ktp"]["name"];

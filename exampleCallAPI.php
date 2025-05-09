@@ -12,8 +12,6 @@ error_reporting(~E_NOTICE);
 // $listUser = new listUser();
 // $listUser = new registrasiUser();
 
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  
     $nik = $_POST['nik'];
@@ -26,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $kota = $_POST['kota'];
     $provinsi = $_POST['provinsi'];
 
-    $arr_param_reg_user = array(
+    $arr_param_reg_user = [
         'nik' => $nik,
         'nama' => $nama,
         'nip' => $nip,
@@ -35,12 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'nomor_telepon' => $nomor_telepon,
         'unit_kerja' => $unit_kerja,
         'kota' => $kota,
-        'provinsi' => $provinsi);
-    
-    
-    
-    
-    $esign->registrasiUser()->index();
+        'provinsi' => $provinsi
+    ];
+
+    $registrasiUser = $esign->registrasiUser();
+    if (is_object($registrasiUser) && method_exists($registrasiUser, 'index')) {
+        $registrasiUser->index();
+    } else {
+        error_log("Error: registrasiUser() did not return a valid object or 'index' method is missing.");
+    }
 
     unset($_SESSION['reg_user']);
     $_SESSION['reg_user'] = $arr_param_reg_user;

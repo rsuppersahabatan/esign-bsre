@@ -2,7 +2,7 @@
 
 namespace getAccessToken;
 
-require_once realpath(__DIR__ . '/../path/to/Endpoint.php'); // Adjust the path to the actual location of Endpoint.php
+require_once realpath(__DIR__ . '/..') ."/env.php";
 
 use Endpoint\Endpoint;
 
@@ -12,9 +12,7 @@ class getAccessToken
 
     public function index()
     {
-
         $endPoint = new Endpoint();
-        require realpath(__DIR__ . '/..') ."/env.php";
         $url = $endPoint->getFullName("get_access_token");      
         $curl = curl_init();
         $proxy = $env["proxy"];
