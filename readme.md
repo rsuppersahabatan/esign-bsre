@@ -1,8 +1,10 @@
 # Esign Library with API from BSRE
 
+Ini adalah library yang dikembangkan hasil modifikasi dari sumber berikut: https://gitlab.com/rio80/esign-library yang digunakan selain pengguna Composer. Jika aplikasi yang dikembangkan mendukung composer bisa merujuk kehalaman berikut: https://github.com/Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP.
+
 ## Revision 1.2 (01-Maret-2019)
 
-<img src="https://bssn.go.id/wp-content/uploads/2017/09/logo-bsre.png" width="500px" height="250px">
+![Logo BSre](logo-bsre.png)
 
 # Created by : Rio Firmansyah Eka Saputra
 
@@ -16,7 +18,7 @@
 
 ## Setting awal library
 
-### --> Merubah URL endpoint <--
+### Merubah URL endpoint
 
 -- Berikut untuk dapat merubah URL yang mengarah ke endpoint API, buka file **env.php**, lalu cari variabel $env["url"], kemudian rubah value nya, contoh merubah value :
 
@@ -28,7 +30,7 @@ Menjadi
 $env["url"] = "https://esign.bssn.go.id";
 ```
 
-### --> Merubah Proxy Host dan Proxy Port <--
+### Merubah Proxy Host dan Proxy Port
 
 - Untuk dapat merubah nomor Proxy Host maupun Proxy Port, buka file **env.php**, lalu cari variabel $env["proxy"], kemudian rubah value nya, contoh value apabila memang harus melewati proxy :
 
@@ -85,7 +87,7 @@ echo $this->esign_lib->index();
 
 ## Penggunaan API Esign
 
-### --> Registrasi User <--
+### Registrasi User
 
 A. Sebelum registrasi, pastikan kita sudah bekerja sama dengan pihak BSRE, situs BSRE resmi bisa diakses pada : https://bssn.go.id/hubungi-kami/.
 
@@ -148,7 +150,7 @@ error saat format email tidak sesuai :
 
 F. Setelah berhasil registrasi, maka kita wajib konfirmasi ke pihak BSRE untuk dilakukan approve data kita.
 
-### --> Send Sign Request <--
+### Send Sign Request
 
 - Untuk Nama file maupun File itu sendiri harus berformat **.pdf**
 
@@ -208,7 +210,7 @@ E. **(Optional)** untuk service ini (send sign request), sudah dibuat tampungan 
 echo $this->session->userdata('id_signed');
 ```
 
-### --> Sign Dokumen <--
+### Sign Dokumen
 
 A. Variabel yang harus disebutkan dan di post pada form view
 
@@ -245,7 +247,7 @@ Muncul error apabila passphrase yang dimasukan salah :
 }
 ```
 
-### --> Download Dokumen <--
+### Download Dokumen
 
 A. Variabel yang harus disebutkan dan di post pada form view
 
@@ -266,7 +268,7 @@ $this->esign_lib->downloadDok('Di isi id_signed', 'Nama File');
 }
 ```
 
-### --> Sign Dokumen & Download <--
+### Sign Dokumen & Download
 
 A. Variabel yang harus disebutkan dan di post pada form view
 
@@ -282,7 +284,7 @@ $this->esign_lib->signDokumenDownload('Di isi id_signed', 'Nama File');
 C. Untuk contoh hasil response berupa file yang awalnya di send sign request
 
 
-### --> Verify Dokumen <--
+### Verify Dokumen
 
 - 1. Panggil kode berikut didalam controller untuk Verify Dokumen
 
