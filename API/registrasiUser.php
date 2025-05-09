@@ -33,11 +33,9 @@ use getAccessToken\getAccessToken;
 
 class registrasiUser
 {
-    public function __construct()
-    {
-
-    }
-
+    private $endPoint;
+    private $access_token;
+    private $env;
     public $filektp;
     public $filesrtrekom;
     public $filesk;
@@ -45,15 +43,19 @@ class registrasiUser
     public $message = array();
     public $prop = "";
     public $status = true;
-
+    public function __construct(){
+        require_once realpath(__DIR__ . '/..') . "/req.php";
+        $this->access_token = $access_token;
+        $this->env = $env ?? [];
+        $this->endPoint = $endPoint;
+    }
     public function index()
     {
         $response = "";
         // if (!$this->status) {
 
             // require_once "req.php";
-            require_once realpath(__DIR__ . '/..') . "/req.php";
-            $url = $endPoint->getFullName("registrasi_user");
+            $url = $this->endPoint->getFullName("registrasi_user");
             $url = str_replace(" ", "%20", $url);
 
             $data = array(
@@ -64,6 +66,8 @@ class registrasiUser
             );
             // echo json_encode($_SESSION['reg_user']) . "<br>";
             // echo $_SESSION['reg_user']['kota'];die();
+
+            $curl = curl_init($url);
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $url,
