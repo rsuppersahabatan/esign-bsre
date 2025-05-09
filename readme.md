@@ -340,3 +340,21 @@ echo $this->esign_lib->verifyDokumen($name, $fullPath);
     "jumlah_signature": 0
 }
 ```
+
+## Lisensi
+
+```php
+/***************************************************************************************
+ *      Author:     	Topidesta as Shabiki <m.desta.fadilah@hotmail.com>
+ *      Website:    	http://www.twitter.com/emang_dasar
+ *
+ *      Created:   		2025 - 09.49.22 WIB
+ *      Copyright:  	(c) 2025 - desta
+ *                  	DON'T BE A DICK PUBLIC LICENSE
+ * 						Version 1, December 2009
+ *						Copyright (C) 2009 Philip Sturgeon
+ *		
+ *		Original: 		https://gitlab.com/rio80/esign-library
+ *      Modified:       https://github.com/rsuppersahabatan/esign-bsre
+ ****************************************************************************************/
+```
