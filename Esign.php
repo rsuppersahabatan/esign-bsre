@@ -2,9 +2,12 @@
 
 namespace Esign;
 
+// Ensure the file containing the listUser class is included if not autoloaded
+require_once __DIR__ . '/API/listUser.php';
+
 use downloadDokumen\downloadDokumen;
 use listUser\listUser;
-use registrasiUser\registrasiUser;
+use API\registrasiUser; // Adjusted namespace to match the file structure
 use sendSignRequest\sendSignRequest;
 use signDokumenDownload\signDokumenDownload;
 use signDokumen\signDokumen;
@@ -13,8 +16,8 @@ use verifyDokumen\VerifyDokumen;
 class Esign
 {
 
-    var $proxy_host;
-    var $proxy_port;
+    public $proxy_host;
+    public $proxy_port;
 
     public function __construct($proxy_host = null, $proxy_port = null)
     {
