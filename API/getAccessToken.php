@@ -2,6 +2,8 @@
 
 namespace getAccessToken;
 
+require_once realpath(__DIR__ . '/../path/to/Endpoint.php'); // Adjust the path to the actual location of Endpoint.php
+
 use Endpoint\Endpoint;
 
 class getAccessToken
