@@ -1,12 +1,10 @@
 # Esign Library with API from BSRE
 
-Ini adalah library yang dikembangkan hasil modifikasi dari sumber berikut: https://gitlab.com/rio80/esign-library yang digunakan selain pengguna Composer. Jika aplikasi yang dikembangkan mendukung composer bisa merujuk kehalaman berikut: https://github.com/Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP.
+Library BSRe yang dikembangkan Oleh Rio Firmansyah Eka Saputra, sudah dimodifikasi oleh M Desta Fadilah, bersumber berikut: https://gitlab.com/rio80/esign-library yang digunakan selain pengguna Composer. Jika aplikasi yang dikembangkan mendukung composer bisa merujuk kehalaman berikut: https://github.com/Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP.
 
 ## Revision 1.2 (01-Maret-2019)
 
 ![Logo BSre](logo-bsre.png)
-
-# Created by : Rio Firmansyah Eka Saputra
 
 ## Tujuan Esign
 
@@ -20,7 +18,7 @@ Ini adalah library yang dikembangkan hasil modifikasi dari sumber berikut: https
 
 ### Merubah URL endpoint
 
--- Berikut untuk dapat merubah URL yang mengarah ke endpoint API, buka file **env.php**, lalu cari variabel $env["url"], kemudian rubah value nya, contoh merubah value :
+Berikut untuk dapat merubah URL yang mengarah ke endpoint API, buka file **env.php**, lalu cari variabel $env["url"], kemudian rubah value nya, contoh merubah value :
 
 ```
 $env["url"] = "https://esign-dev.bssn.go.id";
