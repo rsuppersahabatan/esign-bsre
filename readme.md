@@ -343,7 +343,7 @@ echo $this->esign_lib->verifyDokumen($name, $fullPath);
 
 ## Lisensi
 
-```php
+```javascript
 /************************************************************************
  *  Author:     	Topidesta as Shabiki <m.desta.fadilah@hotmail.com>
  *  Website:    	http://www.twitter.com/emang_dasar
