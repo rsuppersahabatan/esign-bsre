@@ -1,25 +1,27 @@
 <?php
-
 namespace downloadDokumen;
 
 use getAccessToken\getAccessToken;
-
 class downloadDokumen
 {
+    private $endPoint;
+    private $access_token;
+    private $env;
 
-    public function __construct()
-    {
-
+    public function __construct(){
+        require_once realpath(__DIR__ . '/..') . "/req.php";
+        $this->access_token = $access_token;
+        $this->env = $env ?? [];
+        $this->endPoint = $endPoint;
     }
 
     public function index($id_signed, $nama_file)
     {
-        require_once realpath(__DIR__ . '/..') . "/req.php";
-        $endPoint->id_signed = $id_signed;
-        $url = $endPoint->getFullName("download_dokumen");
+        $this->endPoint->id_signed = $id_signed;
+        $url = $this->endPoint->getFullName("download_dokumen");
         $url = str_replace(" ", "%20", $url);
         $curl = curl_init();
-        $proxy = $env["proxy"];
+        $proxy = $this->env["proxy"];
         $proxy = explode(':', $proxy);
 
         curl_setopt_array($curl, array(
@@ -35,7 +37,7 @@ class downloadDokumen
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_POSTFIELDS => "",
             CURLOPT_HTTPHEADER => array(
-                "authorization: Bearer $access_token",
+                "authorization: Bearer $this->access_token",
                 "cache-control: no-cache",
                 "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
                 "postman-token: 512f35d4-7d19-a9e7-d9be-6a563319cf63",
